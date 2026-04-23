@@ -1,0 +1,6 @@
+.env
+app/data/*.sqlite
+app/uploads/*
+!app/uploads/.gitkeep
+*.log
+.DS_Store

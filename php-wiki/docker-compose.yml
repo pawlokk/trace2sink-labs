@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: php-wiki-app
+    env_file:
+      - .env
+    ports:
+      - "8081:80"
+      - "9003:9003"
+    volumes:
+      - ./app:/var/www/html
