@@ -2,48 +2,46 @@
 
 Educational whitebox vulnerability labs for OSWE-style practice.
 
-## Scope
-- Small intentionally vulnerable apps.
-- Focus on source -> transformation -> sink tracing.
-- Fast local/remote reset and repeatable debugging.
-- Training-only environment (not production deployment).
+## Purpose
+- Build small, auditable vulnerable apps.
+- Practice source -> transformation -> sink tracing.
+- Train exploit-chain thinking and deterministic scripting.
+- Re-run labs quickly with stable reset/reseed/debug workflows.
 
-## Current Labs
-- `node-order-portal` (Node.js/Express + MongoDB)
-- `php-wiki` (existing local lab)
+## Repository Layout
+- `labs/` - reusable scaffolding and future shared lab assets
+- `docs/` - methodology and OSWE prep planning
+- `<lab-name>/` - standalone lab directories (each with its own README and runtime instructions)
 
-## Standard Workflow
-1. Open a lab directory (recommended) or open this monorepo root.
-2. Copy env template: `cp .env.example .env`.
-3. Start lab: `docker compose up -d --build`.
-4. Seed data: `docker compose exec app node scripts/seed.js`.
-5. Attach debugger (port depends on lab docs).
-6. Reseed/reset between attempts.
+## Principles
+- Keep labs intentionally small.
+- Prefer readability over abstraction.
+- Keep one clear scenario per lab.
+- Include explicit safe/unsafe training hooks.
+- Avoid unnecessary infra overhead.
 
-## Node Order Portal Quickstart
-```bash
-cd node-order-portal
-cp .env.example .env
-docker compose up -d --build
-docker compose exec app node scripts/seed.js
-curl http://localhost:3002/health
-```
+## Standard Lab Contract
+Each lab should provide:
+- `README.md` with scenario, ports, trace map, hooks, and breakpoints
+- `.env.example`
+- `Dockerfile` + `docker-compose.yml`
+- `.vscode/launch.json` for debugger attach
+- `scripts/reset.sh`, `scripts/reseed.sh`, `scripts/logs.sh`
+- optional `scripts/deploy.sh` for remote host flow
 
-## Debug Quickstart (Node Order Portal)
-1. Keep app running with inspector (`9229` exposed in compose).
-2. If remote host is used, open tunnel:
-```bash
-ssh -L 9229:127.0.0.1:9229 pawlok@192.168.18.126
-```
-3. In VS Code run one of:
-- `Attach Node (node-order-portal from app-builds root)`
-- `Attach Node (node-order-portal direct folder)`
-
-## Repo Hygiene
-- `.env` is ignored globally from this root.
-- `node_modules` and logs are ignored globally.
-- Keep vulnerable patterns explicit and documented in each lab README.
+## Workflow (Any Lab)
+1. `cd <lab-name>`
+2. `cp .env.example .env`
+3. `docker compose up -d --build`
+4. run lab-specific seed step
+5. attach debugger
+6. trace, audit, exploit, reseed, repeat
 
 ## Methodology and Prep
 - `docs/whitebox-methodology.md`
 - `docs/oswe-prep-plan.md`
+- `CONTRIBUTING.md`
+
+## Notes
+- Training-only repository.
+- Not intended for production deployment.
