@@ -1,0 +1,28 @@
+# macOS / editor
+.DS_Store
+.vscode/*.log
+
+# local env and secrets
+**/.env
+**/.env.local
+**/.env.*.local
+
+# dependencies and build output
+**/node_modules/
+**/dist/
+**/build/
+**/.cache/
+
+# runtime / debug artifacts
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.nyc_output/
+**/coverage/
+
+# Python helper artifacts
+**/__pycache__/
+**/*.pyc
+**/venv/
+**/.venv/

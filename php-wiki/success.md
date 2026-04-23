@@ -1,0 +1,7 @@
+- [ ] success condition for this phase
+	- [ ] you recognize the same bug class across different languages
+	- [x] you trace input → sink faster than before
+	- [ ] you spot framework-specific trust mistakes faster
+	- [ ] you think in chains, not single bugs
+	- [x] you can turn each sandbox bug into a clean exploit in your own lab
+	- [x] you can rerun each mini-lab quickly as final revision

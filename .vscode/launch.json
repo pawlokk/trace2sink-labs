@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach Node (node-order-portal from app-builds root)",
+      "type": "node",
+      "request": "attach",
+      "address": "127.0.0.1",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}/node-order-portal",
+      "remoteRoot": "/app",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node-order-portal/node_modules/**"
+      ]
+    },
+    {
+      "name": "Launch node-order-portal (local)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node-order-portal/src/index.js",
+      "cwd": "${workspaceFolder}/node-order-portal",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node-order-portal/node_modules/**"
+      ]
+    }
+  ]
+}
