@@ -117,6 +117,7 @@ Defaults use your lab host from this challenge.
 ```bash
 ./scripts/deploy.sh
 ```
+Assumes SSH key-based access to the remote host.
 
 What it does:
 1. copies project to `/home/pawlok/labs/node-order-portal`
