@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+app/data/
+app/uploads/*
+!app/uploads/.gitkeep
+app/imports/*
+!app/imports/.gitkeep
+.vscode/.ropeproject/

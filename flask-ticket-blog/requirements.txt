@@ -1,0 +1,4 @@
+Flask==3.0.3
+SQLAlchemy==2.0.36
+Werkzeug==3.0.6
+debugpy==1.8.7

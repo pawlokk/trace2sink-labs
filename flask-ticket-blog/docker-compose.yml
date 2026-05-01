@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: flask-ticket-blog-app
+    env_file:
+      - .env
+    ports:
+      - "5003:5003"
+      - "5678:5678"
+    volumes:
+      - ./app:/app/app
+      - ./scripts:/app/scripts

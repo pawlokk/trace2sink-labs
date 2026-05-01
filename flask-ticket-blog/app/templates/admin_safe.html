@@ -1,0 +1,17 @@
+<!doctype html>
+<html><body>
+<h2>Admin Dashboard (Safe Render)</h2>
+<p>User: {{ user.email }} ({{ user.role }})</p>
+<h3>Imports</h3>
+<ul>
+{% for i in imports %}
+  <li>#{{ i.id }} {{ i.filename }} :: {{ i.content }}</li>
+{% endfor %}
+</ul>
+<h3>Posts</h3>
+<ul>
+{% for p in posts %}
+  <li>#{{ p.id }} {{ p.title }} :: {{ p.body }}</li>
+{% endfor %}
+</ul>
+</body></html>
